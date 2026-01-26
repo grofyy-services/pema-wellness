@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-crimson: var(--font-crimson);
+  --font-ivyOra:var(--font-ivyOra);
+  --color-slateGray: #323333;
+  --color-softSand: #F7F2EE;
+  --color-pemaBlue: #4A778C;
+  --color-sunkbakedShell: #CEA17A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  .rdrSelected,
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge {
+    background-color: theme('colors.pemaBlue') !important; /* or any custom color */
+  }
+
+  
+}
+
+
+body {
+  /* background: white; */
+  color: var(--color-slateGray);
+  font-family: 'Crimson Text', serif;
+  scroll-behavior: smooth;
+}
+
+/* animation for info header */
+ @keyframes moveLeft {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+}
+
+/* swiper */
+.swiper-wrapper{
+  align-items: center;
+}
+
+button.react-multiple-carousel__arrow{
+  background: transparent;
+}
+/* Scrollbar track (background) */
+.image-carousel-sanctury  .swiper-scrollbar {
+  height: 2px !important;      /* track thickness */
+  background: #B9B9B9;         /* light gray track */
+  border-radius: 3px;
+  margin: 0 auto;              /* center the scrollbar */
+
+}
+
+/* Draggable thumb */
+.image-carousel-sanctury .swiper-scrollbar-drag {
+  background: #323333;         /* bright red thumb */
+  height: 100%;
+  border-radius: 3px;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+/* Enhanced shimmer loading animation */
+@keyframes shimmer {
+  0% {
+    background-position-x: -400px;
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    background-position-x: 400px;
+    opacity: 0.95;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f7f2ee 0%,
+    #eae1d6 25%,
+    #e8e0d9 35%,
+    #f7f2ee 60%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.3s infinite linear;
+  border-radius: 12px;
+  opacity: 0.95;
+}

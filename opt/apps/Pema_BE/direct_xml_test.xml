@@ -1,0 +1,77 @@
+<OTA_HotelResNotifRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="DIRECT-XML-TEST" TimeStamp="2025-10-25T12:00:00.00+05:30" Version="3.002" ResStatus="Commit">
+  <POS>
+    <Source>
+      <RequestorID Type="22" ID="BayPark" />
+      <BookingChannel Type="CHANNEL">
+        <CompanyName Code="BKNG">MakeMyTrip</CompanyName>
+      </BookingChannel>
+    </Source>
+  </POS>
+  <HotelReservations>
+    <HotelReservation CreateDateTime="2025-10-25T00:00:00.00+05:30">
+      <UniqueID Type="14" ID="DIRECT-XML-TEST" ID_Context="BayPark" />
+      <RoomStays>
+        <RoomStay>
+          <RoomTypes>
+            <RoomType NumberOfUnits="1" RoomTypeCode="EXT" />
+          </RoomTypes>
+          <RatePlans>
+            <RatePlan RatePlanCode="RR0925" MealPlanCode="CP" />
+            <RatePlanInclusions TaxInclusive="false" />
+          </RatePlans>
+          <RoomRates>
+            <RoomRate RoomTypeCode="EXT" RatePlanCode="1">
+              <Rates>
+                <Rate EffectiveDate="2025-11-01" ExpireDate="2025-11-03" RateTimeUnit="Day" UnitMultiplier="1">
+                  <Base AmountAfterTax="37355" AmountBeforeTax="35487" CurrencyCode="INR">
+                    <Taxes Amount="1868" CurrencyCode="INR" />
+                  </Base>
+                </Rate>
+              </Rates>
+            </RoomRate>
+          </RoomRates>
+          <GuestCounts IsPerRoom="true">
+            <GuestCount AgeQualifyingCode="10" Count="1" />
+            <GuestCount AgeQualifyingCode="8" Count="0" />
+          </GuestCounts>
+          <TimeSpan Start="2025-11-01" End="2025-11-03" />
+          <Total AmountIncludingMarkup="74710" AmountAfterTax="74710" AmountBeforeTax="70974" CurrencyCode="INR">
+            <Taxes Amount="3736" CurrencyCode="INR" />
+          </Total>
+          <BasicPropertyInfo HotelCode="7167" />
+          <ResGuestRPHs>
+            <ResGuestRPH RPH="1" />
+          </ResGuestRPHs>
+          <Comments>
+            <Comment>
+              <Text>Direct XML Test - API Verification</Text>
+            </Comment>
+          </Comments>
+        </RoomStay>
+      </RoomStays>
+      <ResGuests>
+        <ResGuest ResGuestRPH="1">
+          <Profiles>
+            <ProfileInfo>
+              <Profile ProfileType="1">
+                <Customer>
+                  <PersonName>
+                    <GivenName>Direct</GivenName>
+                    <Surname>XML</Surname>
+                  </PersonName>
+                  <Telephone PhoneTechType="1" PhoneNumber="+91-7777777777" FormattedInd="false" DefaultInd="true" />
+                  <Email EmailType="1">direct.xml@test.com</Email>
+                  <Address>
+                    <AddressLine>12, TUOPIJ</AddressLine>
+                    <CityName>BENGALURU</CityName>
+                    <CountryName Code="IND">INDIA</CountryName>
+                  </Address>
+                </Customer>
+              </Profile>
+            </ProfileInfo>
+          </Profiles>
+        </ResGuest>
+      </ResGuests>
+    </HotelReservation>
+  </HotelReservations>
+</OTA_HotelResNotifRQ>

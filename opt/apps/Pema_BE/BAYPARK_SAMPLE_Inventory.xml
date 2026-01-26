@@ -1,0 +1,61 @@
+        
+<OTA_HotelInvCountNotifRQ EchoToken="20251028103528099818" TimeStamp="2025-10-28T10:35:28" Version="1.2" userid = "baypark@idsnext.com" password = "idsnext24412" xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance">
+    <Inventories HotelCode="7167">
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="EXE"/>
+            <UniqueID Type="16" ID="1" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="LUX"/>
+            <UniqueID Type="16" ID="2" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="PLR"/>
+            <UniqueID Type="16" ID="4" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="PRE"/>
+            <UniqueID Type="16" ID="7" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="PRR"/>
+            <UniqueID Type="16" ID="11" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="PRS"/>
+            <UniqueID Type="16" ID="16" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="SDX"/>
+            <UniqueID Type="16" ID="22" />
+            <InvCounts>
+                <InvCount CountType="2" Count="0" />
+            </InvCounts>
+        </Inventory>
+        <Inventory>
+            <StatusApplicationControl Start="2026-02-04" End="2026-02-05" InvCode="SRG"/>
+            <UniqueID Type="16" ID="29" />
+            <InvCounts>
+                <InvCount CountType="2" Count="27" />
+            </InvCounts>
+        </Inventory>
+    </Inventories>
+</OTA_HotelInvCountNotifRQ>
