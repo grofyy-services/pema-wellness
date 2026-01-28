@@ -1,0 +1,358 @@
+147  ls -la
+  148  cd Pema_BE
+  149  ls -la
+  150  cd app
+  151  ls -la
+  152  cd api
+  153  ls -la
+  154  cd v1
+  155  ls -la
+  156  cd ..
+  157  clear
+  158  ls -la
+  159  cd v1
+  160  ls -la
+  161  cd /opt/
+  162  ls
+  163  cd pema_frontend/
+  164  ls -la
+  165  cd app/homepage
+  166  ls
+  167  cp page.tsx page.tsx.backup
+  168  cd ..
+  169  cd booking/
+  170  vi utils.ts 
+  171  nano utils.ts 
+  172  cd ..
+  173  cd homepage/
+  174  ls
+  175  cd /root/client-deliverables/website-booking-complete-20251221-1234/var/www/pema/app/homepage
+  176  cd /opt/pema_frontend/app/homepage
+  177  cp /root/client-deliverables/website-booking-complete-20251221-1234/var/www/pema/app/homepage/page.tsx .
+  178  cat page.tsx
+  179  docker ps
+  180  cd ../..
+  181  cd ..
+  182  ls
+  183  cd pema_app/
+  184  ls
+  185  cd Pema_BE
+  186  ls
+  187  docker compose down
+  188  clear
+  189  docker compose up -d
+  190  docker ps
+  191  docker logs pema-api
+  192  cd ..
+  193  ls
+  194  cd ..
+  195  ls
+  196  cd pema_frontend/
+  197  cp /root/client-deliverables/website-booking-complete-20251221-1234/var/www/pema .
+  198  cd 
+  199  ls
+  200  cd client-deliverables/
+  201  cd website-booking-complete-20251221-1234/
+  202  ls
+  203  cd var/www/
+  204  rsync -av --delete pema/ /opt/pema_frontend/
+  205  cd
+  206  cd /opt/pema_frontend/
+  207  ls
+  208  cd app/homepage/
+  209  cat page.tsx 
+  210  dockerps
+  211  dockerps
+  212  docker ps
+  213  docker logs pema-api
+  214  cd ..
+  215  cd ..
+  216  cd ap
+  217  cd api
+  218  nano api.ts
+  219  cd ../
+  220  npm run build
+  221  pm2 restart pema-frontend
+  222  docker logs pema-api
+  223  cd ..
+  224  cd ..
+  225  cd opt/
+  226  ls
+  227  cd pema_app/
+  228  ls
+  229  cd Pema_BE/
+  230  ls
+  231  cd app/
+  232  ls
+  233  cd api/v1/
+  234  ls
+  235  cat public.py
+  236  cd ..
+  237  cd ..
+  238  cd ..
+  239  ls
+  240  docker-compose up --build api
+  241  docker compose up --build api
+  242  docker compose up api
+  243  docker compose up --build api
+  244  cd 
+  245  ls
+  246  cd /opt/pema
+  247  cd /opt/
+  248  ls
+  249  cd pema_app/Pema_BE/
+  250  ls
+  251  cd app/schemas/
+  252  ls
+  253  cat booking.py 
+  254  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/schemas/booking.py .
+  255  cat booking.py 
+  256  cd ../../..
+  257  cd Pema_BE/
+  258  ls
+  259  docker compose up --build api
+  260  ls
+  261  cd app/services/
+  262  ls
+  263  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/services/email.py .
+  264  cd ../../..
+  265  cd Pema_BE/
+  266  docker compose up --build api
+  267  cd app/schemas/
+  268  ls
+  269  cat
+  270  cat room.py 
+  271  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/schemas/room.py .
+  272  ls
+  273  cd ../../..
+  274  cd Pema_BE/
+  275  docker compose up --build api
+  276  cd app/schemas/
+  277  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/schemas/payment.py .
+  278  cd ../..
+  279  docker compose up --build api
+  280  cd app/api/v1/
+  281  ls
+  282  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/api/v1/payment.py .
+  283  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/api/v1/payments.py .
+  284  cd ../../..
+  285  docker compose up --build api
+  286  cd app/services/
+  287  ls
+  288  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/services/ids .
+  289  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/services/ids.py .
+  290  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/services/ids_adapter.py .
+  291  cd /root/client-deliverables/website-booking-complete-20251221-1234/
+  292  ls
+  293  cd opt/
+  294  ls
+  295  cd apps/Pema_BE/
+  296  ls
+  297  rsync -av --delete app/ /opt/pema_app/Pema_BE/app/
+  298  cd /opt/pema_app/Pema_BE
+  299  docker compose up --build api
+  300  docker-compose build pema-api
+  301  docker compose --build api
+  302  ls
+  303  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/requirements.txt .
+  304  docker compose up --build api
+  305  ls
+  306  cd app/
+  307  ls
+  308  cd ..
+  309  cat .env
+  310  nano .env
+  311  docker compose up --build api
+  312  nano .env
+  313  cat .env
+  314  nano .env
+  315  docker compose up --build api
+  316  nano .env
+  317  docker compose up --build api
+  318  docker compose up -d
+  319  exit
+  320  exit
+  321  clear
+  322  ls -la
+  323  cd client-deliverables
+  324  ls -la
+  325  cd website-booking-complete-20251221-1234
+  326  ls -la
+  327  cd opt
+  328  ls -la
+  329  cd app
+  330  cd appps
+  331  ls -la
+  332  cd apps
+  333  ls -la
+  334  cd Pema_BE
+  335  ls -la
+  336  cd app
+  337  ls -la
+  338  cd api
+  339  cd v1
+  340  ls -la
+  341  cd
+  342  ls -la
+  343  cd /opt
+  344  ls -la
+  345  cd /opt/pema_app/Pema_BE/app/api/v1/
+  346  ls -la
+  347  cp bookings.py bookings.py.backup
+  348  cp public.py public.py.backup
+  349  ls -la *.backup
+  350  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/api/v1/bookings.py .
+  351  cp /root/client-deliverables/website-booking-complete-20251221-1234/opt/apps/Pema_BE/app/api/v1/public.py .
+  352  ls -lh *.py | grep -E "(bookings|public)"
+  353  pm2 restart pema-backend
+  354  docker-compose -f /opt/pema_app/docker-compose.yml restart
+  355  cd /opt/pema_frontend
+  356  ls -la
+  357  pm2 restart pema-frontend
+  358  ls -la
+  359  curl -I http://127.0.0.1:3000/booking
+  360  cd
+  361  ls -la
+  362  cd client-deliverables
+  363  ls -la
+  364  cd website-booking-complete-20251221-1234
+  365  ls -la
+  366  cd var
+  367  ls -la
+  368  cd www
+  369  ls -la
+  370  cd pema
+  371  ls -la
+  372  cd /opt/pema_frontends
+  373  cd /opt
+  374  ls -la
+  375  cd pema_frontend
+  376  ls -la
+  377  npm install
+  378  npm run build
+  379  pm2 restart pema-frontend
+  380  pm2 status
+  381  pm2 logs pema-frontend --lines 10
+  382  pm2 logs pema-frontend --lines 50
+  383  cd /opt/
+  384  ls
+  385  cd pema_frontend/
+  386  cd app/homepage
+  387  nano page.tsx 
+  388  cd ../..
+  389  npm run build
+  390  pm2 restart pema-frontend
+  391  exit
+  392  ls
+  393  cd /opt/pema_frontend/public/images/home/
+  394  ls
+  395  exit
+  396  cd /opt/pema_frontend/
+  397  npm run build
+  398  pm2 restart pema-frontend
+  399  pm2 describe pema_frontend
+  400  pm2 describe pema-frontend
+  401  cd var/www/pema/app/homepage/page.tsx
+  402  cd app/homepage/
+  403  nano page.tsx 
+  404  exit
+  405  cd /opt/pema_frontend
+  406  npm run build
+  407  pm2 restart pema-frontend
+  408  exit
+  409  cd /opt/pema_frontend/
+  410  npm run build
+  411  pm2 restart pema-frontend
+  412  cd app/homepage
+  413  ls
+  414  nanot page.tsx 
+  415  nano page.tsx 
+  416  nano page.tsx 
+  417  exit
+  418  cd /opt/pema_frontend/
+  419  npm run build
+  420  pm2 restart pema-frontend
+  421  cd app/homepage/
+  422  nano page.tsx 
+  423  exit
+  424  cd /opt/pema_frontend/
+  425  npm run build
+  426  pm2 restart pema-frontend
+  427  cd /opt/pema-be
+  428  cd /opt
+  429  ls -la
+  430  cd pema_app
+  431  ls -la
+  432  cd Pema_BE
+  433  docker-compose exec db psql -U pema_user -d pema_wellness
+  434  systemctl status postgresql
+  435  systemctl status postgresql
+  436  sudo -u postgres psql
+  437  sudo -u postgres psql
+  438  cd -opt 
+  439  cd /opt 
+  440  ls
+  441  cd/ pema_app
+  442  cd /pema_app
+  443  cd pema_app
+  444  ls
+  445  cd Pema_BE
+  446  ls
+  447  cd app
+  448  ls
+  449  cd ..
+  450  ls 
+  451  ls -la
+  452  cat .env.prod
+  453  cd ..
+  454  cd ..
+  455  exit
+  456  docker ps
+  457  docker logs 6c04240a70a8
+  458  exit
+  459  clear
+  460  cd /opt
+  461  ls -la
+  462  cd prma_app
+  463  cd pema_app
+  464  ls -la
+  465  cd Pema_BE
+  466  ls -la
+  467  cd app
+  468  ls -la
+  469  cd
+  470  cd /opt
+  471  ls -la
+  472  cd pema_frontend
+  473  ls -la
+  474  cd app
+  475  ls -la
+  476  cd ..
+  477  ls -la
+  478  cd compenents
+  479  cd components
+  480  ls -la
+  481  nano NavBar.tsx
+  482  cd ..
+  483  npm run build
+  484  pm2 restart pema-frontend
+  485  docker ps
+  486  ȩxit
+  487  exit
+  488  docker ps
+  489  docker logs pema_be-api
+  490  docker logs 6c04240a70a8
+  491  exit
+  492  docker logs 6c04240a70a8
+  493  docker logs -f 6c04240a70a8
+  494  ls
+  495  cat .env.prod
+  496  cd /root/
+  497  ls
+  498  cd client-deliverables/
+  499  ls
+  500  exit
+  501  cd /opt
+  502  history | tail -50
+  503  history | tail -500
+root@server:/opt# 

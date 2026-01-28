@@ -1,15 +1,17 @@
 # Pema Wellness API - Makefile for development tasks
 
-.PHONY: help install dev test lint format clean docker-build docker-up docker-down deploy
+.PHONY: help venv install dev test lint format clean docker-build docker-up docker-down deploy setup
 
 # Default target
 help:
 	@echo "Pema Wellness API - Available commands:"
 	@echo ""
 	@echo "Development:"
-	@echo "  install     Install dependencies"
-	@echo "  dev         Start development server"
-	@echo "  test        Run tests"
+	@echo "  setup       Setup development environment (creates venv, installs deps)"
+	@echo "  venv       Create virtual environment"
+	@echo "  install    Install dependencies"
+	@echo "  dev        Start development server"
+	@echo "  test       Run tests"
 	@echo "  lint        Run linting checks"
 	@echo "  format      Format code"
 	@echo "  clean       Clean cache and temporary files"
@@ -26,11 +28,22 @@ help:
 	@echo "  db-seed     Seed database with sample data"
 
 # Development commands
-install:
-	pip install -r requirements.txt
+# Check if venv exists, create if not
+venv:
+	@if [ ! -d "venv" ]; then \
+		echo "Creating virtual environment..."; \
+		python3 -m venv venv; \
+		echo "Virtual environment created!"; \
+	fi
 
-dev:
-	uvicorn app.main:app --reload --port 8000
+install: venv
+	@echo "Installing dependencies..."
+	./venv/bin/pip install -r requirements.txt
+	@echo "Dependencies installed!"
+
+dev: venv
+	@echo "Starting development server..."
+	./venv/bin/uvicorn app.main:app --reload --port 8000
 
 test:
 	pytest tests/ -v --cov=app --cov-report=html --cov-report=term
@@ -96,12 +109,22 @@ check: lint test
 	@echo "All quality checks passed!"
 
 # Setup development environment
-setup:
-	pip install -r requirements.txt
-	cp env.example .env
+setup: venv
+	@echo "Setting up development environment..."
+	./venv/bin/pip install -r requirements.txt
+	@if [ ! -f ".env" ]; then \
+		if [ -f "env.example" ]; then \
+			cp env.example .env; \
+			echo "Created .env file from env.example"; \
+		else \
+			echo "Warning: env.example not found. Please create .env manually."; \
+		fi; \
+	else \
+		echo ".env file already exists, skipping..."; \
+	fi
 	@echo "Environment setup complete!"
 	@echo "Please edit .env file with your configuration"
-	@echo "Then run: make docker-up"
+	@echo "Then run: make dev (or make docker-up for Docker)"
 
 # Production commands
 prod-build:
