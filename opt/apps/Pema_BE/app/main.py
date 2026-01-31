@@ -20,7 +20,7 @@ from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.core.logging import setup_logging
 from app.core.exceptions import PemaException
-from app.api.v1 import bookings, payments, public, contact, ids
+from app.api.v1 import bookings, payments, public, contact, ids, admin
 from app.db.postgresql import init_db, AsyncSessionLocal
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.postgresql import get_db
@@ -334,6 +334,7 @@ app.include_router(bookings.router, prefix="/api/v1/bookings", tags=["Bookings"]
 app.include_router(payments.router, prefix="/api/v1/payments", tags=["Payments"])
 app.include_router(contact.router, prefix="/api/v1/contact", tags=["Contact"])
 app.include_router(ids.router, prefix="/api/v1/ids", tags=["IDS Integration"])
+app.include_router(admin.router, prefix="/api/v1/admin", tags=["Admin"])
 
 # Alias endpoint to support PayU webhook URLs configured at /payments
 @app.post("/payments", operation_id="payu_webhook_alias")

@@ -277,3 +277,53 @@ class InvoiceResponse(BaseModel):
     
     class Config:
         from_attributes = True
+
+class AdminPaymentListResponse(BaseModel):
+    id: int
+    booking_id: Optional[int] = None
+    amount: int
+    payment_type: PaymentType
+    status: PaymentStatus
+    gateway: PaymentGateway
+    reference_number: Optional[str] = None
+    created_at: datetime
+    completed_at: Optional[datetime] = None
+
+    class Config:
+        from_attributes = True
+
+
+class AdminPaymentListPaginatedResponse(BaseModel):
+    """Admin payments list with total for pagination."""
+    items: List[AdminPaymentListResponse]
+    total: int
+    page: int
+    limit: int
+
+
+class AdminPaymentDetailResponse(BaseModel):
+    """Full payment detail for admin (booking_id may be null)."""
+    id: int
+    booking_id: Optional[int] = None
+    amount: int
+    currency: str
+    payment_type: PaymentType
+    status: PaymentStatus
+    gateway: PaymentGateway
+    payment_intent_id: Optional[str] = None
+    payment_order_id: Optional[str] = None
+    order_id: Optional[str] = None
+    payment_method: Optional[str] = None
+    payment_method_details: Optional[Dict[str, Any]] = None
+    gateway_fee: int = 0
+    net_amount: int = 0
+    reference_number: Optional[str] = None
+    failure_reason: Optional[str] = None
+    created_at: datetime
+    completed_at: Optional[datetime] = None
+    refunded_amount: int = 0
+    refundable_amount: int = 0
+    raw_response: Optional[Dict[str, Any]] = None
+
+    class Config:
+        from_attributes = True

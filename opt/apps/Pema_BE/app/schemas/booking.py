@@ -236,6 +236,35 @@ class BookingListResponse(BaseModel):
         from_attributes = True
 
 
+class AdminBookingListResponse(BaseModel):
+    """Admin list: basic fields + guest contact for table view."""
+    id: int
+    confirmation_number: Optional[str]
+    status: BookingStatus
+    program_title: Optional[str]
+    room_name: str
+    check_in_date: date
+    check_out_date: date
+    total_amount: int
+    paid_amount: int
+    created_at: datetime
+    guest_first_name: Optional[str] = None
+    guest_last_name: Optional[str] = None
+    guest_email: Optional[str] = None
+    guest_phone: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+
+class AdminBookingListPaginatedResponse(BaseModel):
+    """Admin bookings list with total for pagination."""
+    items: List["AdminBookingListResponse"]
+    total: int
+    page: int
+    limit: int
+
+
 class BookingStatusUpdate(BaseModel):
     status: BookingStatus
     notes: Optional[str] = Field(None, max_length=1000)

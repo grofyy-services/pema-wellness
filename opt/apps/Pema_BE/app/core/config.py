@@ -145,6 +145,9 @@ class Settings(BaseSettings):
     # API Keys for external services
     GOOGLE_MAPS_API_KEY: str = ""
 
+    # Admin login: comma-separated "email:password" (e.g. "a@b.com:pass1,c@d.com:pass2")
+    ADMIN_USERS: str = "siddhartha@pemawellness.com:Life@2026"
+
     # Email service (Google SMTP)
     GMAIL_USERNAME: Optional[str] = None
     GMAIL_APP_PASSWORD: Optional[str] = None

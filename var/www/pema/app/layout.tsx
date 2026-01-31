@@ -54,6 +54,7 @@ export default function RootLayout({
 
   const contactFormHiddenRoutes = [
     ROUTES.comingSoon,
+    ROUTES.admin,
     ROUTES.medicalHealthAssessment,
     ROUTES.booking,
     ROUTES.roomDetails,

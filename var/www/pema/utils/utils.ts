@@ -116,6 +116,7 @@ export const ROUTES = {
   wellnessProgram: '/wellness-program',
   medicalHealthProgram: '/medical-health-program',
   pemaLite: '/pema-lite',
+  admin: '/admin',
 
   // The Sanctuary
   theSanctuary: '/the-sanctuary',
