@@ -6,12 +6,22 @@ and the internal PMS JSON API format used by the property management system.
 """
 
 import logging
+import re
 import httpx
 import json
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List, Tuple
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
+
+
+def normalize_phone_for_ids(phone: str) -> str:
+    digits = re.sub(r"\D", "", phone or "")
+    # If includes country code 91 and has 12 digits, remove it
+    if digits.startswith("91") and len(digits) == 12:
+        digits = digits[2:]
+    # Return in a format IDS won't cast to int
+    return f"+91-{digits}" if len(digits) == 10 else f"+{digits}"
 
 
 class IDSAdapterService:
@@ -291,7 +301,7 @@ class IDSAdapterService:
 
         logger.warning(f"XML amounts: total_rupees={total_amount_rupees}, nights={nights}, per_night_after_tax={per_night_amount_after_tax}, per_night_tax={per_night_tax_amount}, per_night_before={per_night_base_before_tax}")
 
-        # Use per-night amounts in the Rate element
+        # Per-night amounts for each Rate element
         amount_after_tax = per_night_amount_after_tax
         tax_amount = per_night_tax_amount
         base_amount_before_tax = per_night_base_before_tax
@@ -300,6 +310,106 @@ class IDSAdapterService:
         amount_before_tax = total_before_tax
         tax_amount_total = total_tax_amount
         total_amount_paise = total_amount_after_tax  # Actually Rupees now, keeping var name to minimize diffs
+
+        # Build one <Rate> per night (sample payload structure)
+        from datetime import timedelta
+        rates_xml_parts = []
+        for i in range(nights):
+            night_start = (check_in + timedelta(days=i)).strftime('%Y-%m-%d')
+            night_end = (check_in + timedelta(days=i + 1)).strftime('%Y-%m-%d')
+            rates_xml_parts.append(f'''                <Rate EffectiveDate="{night_start}" ExpireDate="{night_end}" RateTimeUnit="Day" UnitMultiplier="1">
+                  <Base AmountAfterTax="{amount_after_tax}" AmountBeforeTax="{base_amount_before_tax}" CurrencyCode="{reservation_data.get('currency_code', 'INR')}">
+                    <Taxes Amount="{tax_amount}" CurrencyCode="{reservation_data.get('currency_code', 'INR')}" />
+                  </Base>
+                </Rate>''')
+        rates_xml = '\n'.join(rates_xml_parts)
+
+        # Exact 10 digits for IDS: digits-only; Indian 12-digit (91...) -> 10 digits; 11-digit (0...) -> 10 digits
+        _raw_phone = guest_info.get('phone') or ''
+        phone_digits = re.sub(r'\D', '', str(_raw_phone)) if _raw_phone else ''
+        if phone_digits:
+            if len(phone_digits) == 12 and phone_digits.startswith('91'):
+                phone_for_xml = phone_digits[2:]  # 919963478806 -> 9963478806 (exact 10 digits)
+            elif len(phone_digits) == 11 and phone_digits.startswith('0'):
+                phone_for_xml = phone_digits[1:]  # 09963478806 -> 9963478806 (exact 10 digits)
+            else:
+                phone_for_xml = phone_digits
+        else:
+            phone_for_xml = 'NA'
+        logger.info(f"IDS XML phone: raw={_raw_phone!r} -> normalized={phone_for_xml!r}")
+
+        # Build guest list: primary + other_guests (so IDS shows distinct names, not duplicate primary)
+        def _parse_full_name(full_name: str) -> Tuple[str, str]:
+            name = (full_name or '').strip()
+            if not name:
+                return ('', '')
+            parts = name.split()
+            if len(parts) <= 1:
+                return (name, '')
+            return (' '.join(parts[:-1]), parts[-1])
+
+        guests: List[Tuple[str, str]] = [
+            (guest_info.get('first_name', ''), guest_info.get('last_name', ''))
+        ]
+        other_guests = guest_info.get('other_guests') or []
+        if isinstance(other_guests, str):
+            other_guests = [n.strip() for n in other_guests.split(',') if n.strip()]
+        for name in other_guests:
+            if not name or not isinstance(name, str):
+                continue
+            given, surname = _parse_full_name(name)
+            # Skip if duplicate of primary
+            primary_given = guest_info.get('first_name', '')
+            primary_surname = guest_info.get('last_name', '')
+            if (given, surname) == (primary_given, primary_surname):
+                continue
+            guests.append((given, surname))
+
+        # ResGuestRPHs: one per guest (1, 2, 3, ...)
+        res_guest_rphs = '\n            '.join(
+            f'<ResGuestRPH RPH="{i}" />' for i in range(1, len(guests) + 1)
+        )
+
+        # ResGuests: one block per guest; primary gets phone/email, others get name only
+        res_guest_blocks = []
+        for rph, (given_name, surname) in enumerate(guests, start=1):
+            if rph == 1:
+                block = f'''        <ResGuest ResGuestRPH="{rph}">
+          <Profiles>
+            <ProfileInfo>
+              <Profile ProfileType="1">
+                <Customer>
+                  <PersonName>
+                    <GivenName>{given_name}</GivenName>
+                    <Surname>{surname}</Surname>
+                  </PersonName>
+                  <Telephone PhoneTechType="1" PhoneNumber="{phone_for_xml}" DefaultInd="true" />
+                  <Email EmailType="1">{guest_info.get('email', '')}</Email>
+                  <Address>
+                    <CountryName Code="IND">INDIA</CountryName>
+                  </Address>
+                </Customer>
+              </Profile>
+            </ProfileInfo>
+          </Profiles>
+        </ResGuest>'''
+            else:
+                block = f'''        <ResGuest ResGuestRPH="{rph}">
+          <Profiles>
+            <ProfileInfo>
+              <Profile ProfileType="1">
+                <Customer>
+                  <PersonName>
+                    <GivenName>{given_name}</GivenName>
+                    <Surname>{surname}</Surname>
+                  </PersonName>
+                </Customer>
+              </Profile>
+            </ProfileInfo>
+          </Profiles>
+        </ResGuest>'''
+            res_guest_blocks.append(block)
+        res_guests_xml = '\n'.join(res_guest_blocks)
 
         # Create XML structure - EXACT format from successful test
         xml_content = f'''<OTA_HotelResNotifRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opentravel.org/OTA/2003/05" EchoToken="{unique_id}" TimeStamp="{timestamp}.00+05:30" Version="3.002" ResStatus="Commit">
@@ -326,11 +436,7 @@ class IDSAdapterService:
           <RoomRates>
             <RoomRate RoomTypeCode="{reservation_data.get('room_code', 'EXT')}" RatePlanCode="1">
               <Rates>
-                <Rate EffectiveDate="{reservation_data.get('check_in_date')}" ExpireDate="{reservation_data.get('check_out_date')}" RateTimeUnit="Day" UnitMultiplier="1">
-                  <Base AmountAfterTax="{amount_after_tax}" AmountBeforeTax="{base_amount_before_tax}" CurrencyCode="{reservation_data.get('currency_code', 'INR')}">
-                    <Taxes Amount="{tax_amount}" CurrencyCode="{reservation_data.get('currency_code', 'INR')}" />
-                  </Base>
-                </Rate>
+{rates_xml}
               </Rates>
             </RoomRate>
           </RoomRates>
@@ -344,7 +450,7 @@ class IDSAdapterService:
           </Total>
           <BasicPropertyInfo HotelCode="7167" />
           <ResGuestRPHs>
-            <ResGuestRPH RPH="1" />
+            {res_guest_rphs}
           </ResGuestRPHs>
           <Comments>
             <Comment>
@@ -354,32 +460,13 @@ class IDSAdapterService:
         </RoomStay>
       </RoomStays>
       <ResGuests>
-        <ResGuest ResGuestRPH="1">
-          <Profiles>
-            <ProfileInfo>
-              <Profile ProfileType="1">
-                <Customer>
-                  <PersonName>
-                    <GivenName>{guest_info.get('first_name', '')}</GivenName>
-                    <Surname>{guest_info.get('last_name', '')}</Surname>
-                  </PersonName>
-                  <Telephone PhoneTechType="1" PhoneNumber="{guest_info.get('phone', 'NA')}" FormattedInd="false" DefaultInd="true" />
-                  <Email EmailType="1">{guest_info.get('email', '')}</Email>
-                  <Address>
-                    <AddressLine>12, TUOPIJ</AddressLine>
-                    <CityName>BENGALURU</CityName>
-                    <CountryName Code="IND">INDIA</CountryName>
-                  </Address>
-                </Customer>
-              </Profile>
-            </ProfileInfo>
-          </Profiles>
-        </ResGuest>
+{res_guests_xml}
       </ResGuests>
     </HotelReservation>
   </HotelReservations>
 </OTA_HotelResNotifRQ>'''
 
+        logger.info("Exact XML sent to IDS:\n%s", xml_content)
         return xml_content
 
     async def check_reservation_status(self, booking_reference: str) -> Dict[str, Any]:

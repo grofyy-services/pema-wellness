@@ -1321,8 +1321,23 @@ Version="1.2" EchoToken="{str(uuid4())}">
                 from uuid import uuid4
                 booking_data['unique_id'] = str(uuid4())
 
-            logger.info(f"Booking details: {booking_data.get('room_code')}, {booking_data.get('check_in_date')} to {booking_data.get('check_out_date')}, {booking_data.get('adults')} adults")
+            logger.info(f"Booking details: {booking_data.get('room_code')}, {booking_data.get('check_in_date')} to {booking_data.get('check_out_date')}, {booking_data.get('adults')} adults {booking_data.get('children')} children")
 
+            logger.info(f"Booking details: {booking_data}")
+            logger.info(f"Booking details keys: {booking_data.keys()}")
+
+            logger.info(f"Booking details guest_info: {booking_data.get('guest_info')}")
+            logger.info(f"Booking details values: {booking_data.values()}")
+            logger.info(f"Booking details other_guests: {booking_data.get('guest_info', {}).get('other_guests')}")
+            logger.info(f"Booking details phone: {booking_data.get('guest_info').get('phone')}")
+            logger.info(f"Booking details email: {booking_data.get('guest_info').get('email')}")
+            logger.info(f"Booking details first_name: {booking_data.get('guest_info').get('first_name')}")
+            logger.info(f"Booking details last_name: {booking_data.get('guest_info').get('last_name')}")
+            logger.info(f"Booking details country: {booking_data.get('guest_info').get('country')}")
+            logger.info(f"Booking details special_requests: {booking_data.get('special_requests')}")
+            logger.info(f"Booking details estimate_details: {booking_data.get('estimate_details')}")
+            logger.info(f"Booking details total_amount: {booking_data.get('total_amount')}")
+            logger.info(f"Booking details deposit_amount: {booking_data.get('deposit_amount')}")
             adapter = IDSAdapterService(self.api_url, self.api_key, self.api_secret)
             xml_content = adapter._create_booking_xml(booking_data)
 
@@ -1350,6 +1365,7 @@ Version="1.2" EchoToken="{str(uuid4())}">
                 logger.info(f"Posting XML directly to IDS: {ids_url}")
                 logger.info(f"🔑 Auth header: {auth_header[:20]}...")
                 logger.info(f"📄 XML length: {len(xml_content)} chars")
+                logger.info("Exact content sent to IDS:\n%s", xml_content)
 
                 async with httpx.AsyncClient(timeout=30.0) as client:
                     response = await client.post(ids_url, content=xml_content, headers=headers)
