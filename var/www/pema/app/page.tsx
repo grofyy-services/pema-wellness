@@ -5,11 +5,14 @@ export const metadata = {
   description:
     'Best Wellness Retreats in India at Pema Wellness bring together yoga, meditation, Ayurveda programs, balanced routines, and calming natural surroundings.',
   keywords: ['best wellness retreats in India', 'wellness retreat India'],
+  alternates: {
+    canonical: 'https://www.pemawellness.com/',
+  },
   openGraph: {
     title: 'Best Wellness Retreats in India | Pema Wellness',
     description:
       'Best Wellness Retreats in India at Pema Wellness bring together yoga, meditation, Ayurveda programs, balanced routines, and calming natural surroundings.',
-    url: 'https://pemawellness.com',
+    url: 'https://www.pemawellness.com/',
   },
 }
 
