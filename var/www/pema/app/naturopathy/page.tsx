@@ -1,13 +1,14 @@
 import Naturopathy from './Naturopathy'
 
 export const metadata = {
-  title: 'Naturopathy | Pema Wellness',
+  title: 'Best Naturopathy Centre in India | Pema Wellness',
   description:
-    'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+    'Pema Wellness offers the best naturopathy centre in India experience with personalized natural therapies and peaceful wellness environments.',
+  keywords: ['best naturopathy centre in india', 'naturopathy in india'],
   openGraph: {
-    title: 'Naturopathy | Pema Wellness',
+    title: 'Best Naturopathy Centre in India | Pema Wellness',
     description:
-      'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+      'Pema Wellness offers the best naturopathy centre in India experience with personalized natural therapies and peaceful wellness environments.',
     url: 'https://pemawellness.com',
   },
 }

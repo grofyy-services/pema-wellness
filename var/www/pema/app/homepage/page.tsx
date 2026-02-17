@@ -1,33 +1,33 @@
 'use client'
 import PrimaryButton from '@/components/PrimaryButton'
-import { MoveRight, ChevronDown } from 'lucide-react'
+import { ChevronDown, MoveRight } from 'lucide-react'
 import Image from 'next/image'
-import { useEffect, useState, memo, useRef } from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import ReactPlayer from 'react-player'
 
-import 'react-multi-carousel/lib/styles.css'
-import ComparisonTable from './Table'
-import ComparisonTableMobile from './TableMobile'
-import Koshas from './Koshas'
-import TestimonialCard from './Testimonials'
-import NaturopathicSection from './Naturopathic'
-import MapsSection from './Maps'
-import GiftSection from './Gift'
-import DoctorsCarouselSwiper from './SwiperExperts'
-import { addDays } from 'date-fns'
 import DatePickerModal from '@/components/DatePicker'
 import RoomGuestPicker from '@/components/RoomGuestPicker'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
+import { addDays } from 'date-fns'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import 'react-multi-carousel/lib/styles.css'
+import GiftSection from './Gift'
+import Koshas from './Koshas'
+import MapsSection from './Maps'
+import NaturopathicSection from './Naturopathic'
+import DoctorsCarouselSwiper from './SwiperExperts'
+import ComparisonTable from './Table'
+import ComparisonTableMobile from './TableMobile'
+import TestimonialCard from './Testimonials'
 
-import { EXTERNAL_LINKS, openWhatsApp, ROUTES, takeOurHealthQuiz, zohoForms } from '@/utils/utils'
-import MobileSlides from './MobileSlides'
-import TestimonialMobile from './TestimonialsMobile'
-import NaturopathicSectionMobile from './NaturopathicMobile'
 import ImageWithShimmer from '@/components/ImageWithShimmer'
 import { useDeviceType } from '@/hooks/useDeviceType'
+import { openWhatsApp, ROUTES, zohoForms } from '@/utils/utils'
+import MobileSlides from './MobileSlides'
+import NaturopathicSectionMobile from './NaturopathicMobile'
+import TestimonialMobile from './TestimonialsMobile'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -265,6 +265,7 @@ export default function HomePage() {
   }
   return (
     <div className='flex-1 relative bg-softSand md:bg-white'>
+      <h1 className='sr-only'>Restore Your Energy at the Best Wellness Retreats in India</h1>
       {/* hero section */}
       <div
         className={`lg:bg-[url('/home-hero-bg-image.png')] bg-center bg-cover w-full h-full 

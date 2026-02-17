@@ -1,13 +1,14 @@
 import Contact from './ContactUs'
 
 export const metadata = {
-  title: 'Contact | Pema Wellness',
+  title: 'Health Resorts in India for Natural Healing | Pema Wellness',
   description:
-    'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+    'Choose Pema Wellness, one of the health resorts in India for natural healing, focused on balance, wellness therapies, and holistic care. Visit us today.',
+  keywords: ['health resorts in india', 'best wellness resort in india'],
   openGraph: {
-    title: 'Contact | Pema Wellness',
+    title: 'Health Resorts in India for Natural Healing | Pema Wellness',
     description:
-      'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+      'Choose Pema Wellness, one of the health resorts in India for natural healing, focused on balance, wellness therapies, and holistic care. Visit us today.',
     url: 'https://pemawellness.com',
   },
 }

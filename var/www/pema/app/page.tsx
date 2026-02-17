@@ -1,13 +1,14 @@
 import HomePage from './homepage/page'
 
 export const metadata = {
-  title: 'Home | Pema Wellness',
+  title: 'Best Wellness Retreats in India | Pema Wellness',
   description:
-    'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+    'Best Wellness Retreats in India at Pema Wellness bring together yoga, meditation, Ayurveda programs, balanced routines, and calming natural surroundings.',
+  keywords: ['best wellness retreats in India', 'wellness retreat India'],
   openGraph: {
-    title: 'Pema Wellness',
+    title: 'Best Wellness Retreats in India | Pema Wellness',
     description:
-      'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+      'Best Wellness Retreats in India at Pema Wellness bring together yoga, meditation, Ayurveda programs, balanced routines, and calming natural surroundings.',
     url: 'https://pemawellness.com',
   },
 }

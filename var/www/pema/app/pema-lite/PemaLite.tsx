@@ -1,16 +1,16 @@
 'use client'
 import Breadcrumbs from '@/components/BreadCrumbs'
+import ImageWithShimmer from '@/components/ImageWithShimmer'
 import PrimaryButton from '@/components/PrimaryButton'
-import { Check, Mail, MapPin, MoveRight, Phone } from 'lucide-react'
+import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
+import { openWhatsApp, ROUTES } from '@/utils/utils'
+import { Check, MoveRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
-import { goToPemaMaps, openWhatsApp, ROUTES } from '@/utils/utils'
-import Marquee from 'react-fast-marquee'
-import TestimonialCard from './Testimonials'
-import PemaTabsWeb from './Slides'
 import { useRouter } from 'next/navigation'
-import ImageWithShimmer from '@/components/ImageWithShimmer'
+import Marquee from 'react-fast-marquee'
+import PemaTabsWeb from './Slides'
+import TestimonialCard from './Testimonials'
 
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Pema lite' }]
 
@@ -19,23 +19,20 @@ export default function PemaLite() {
   return (
     <div className=' max-w-[1360px] m-auto py-6 '>
       <Breadcrumbs items={crumbs} separator={' / '} className='px-4' />
-      <div className='px-4 text-base md:text-xl text-slateGray font-crimson text-center mb-2 mt-9'>
-        Pema lite
-      </div>
-      <div className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center '>
-        The gold standard in light, luxurious healing.{' '}
-      </div>
+      <h1 className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center '>
+        Refined Healing at Luxury Wellness Resorts in India{' '}
+      </h1>
       <div className='px-4'>
         <div className='relative mt-6 w-full max-h-[470px] aspect-358/470 md:aspect-630/1360 md:max-h-[630px] overflow-hidden'>
           <Image
             src={'/images/pema-lite/pema-lite-hero-image-mobile.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover block md:hidden absolute top-0 left-0 `}
           />
           <Image
             src={'/images/pema-lite/pema-lite-hero-image-web.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover hidden md:block absolute top-0 left-0 `}
           />
@@ -71,13 +68,13 @@ export default function PemaLite() {
         <div className='relative mt-6 w-full h-[430px] md:h-[552px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/pema-lite/pema-lite-hero-image-2-web.webp'}
-            alt={'naturopathy-banner-home'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover absolute hidden md:block top-0 left-0 `}
           />
           <ImageWithShimmer
             src={'/images/pema-lite/pema-lite-hero-image-2-mobile.webp'}
-            alt={'naturopathy-banner-home'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover absolute block md:hidden top-0 left-0 `}
           />
@@ -91,7 +88,7 @@ export default function PemaLite() {
         <div className='relative hidden md:block w-full h-[350px] md:h-[700px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/pema-lite/stay-your-way-web.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -132,7 +129,7 @@ export default function PemaLite() {
         <div className='relative w-full h-[350px] md:h-[700px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/pema-lite/choose-your-rythm-web.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -254,7 +251,7 @@ export default function PemaLite() {
         <div className='relative md:hidden block w-full h-[300px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/pema-lite/pema-bottom-image.webp'}
-            alt={'slide.text'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover absolute top-0 left-0 transition-opacity duration-700`}
           />
@@ -274,7 +271,7 @@ export default function PemaLite() {
         <div className='relative w-full h-[540px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/home/healing-sanctury-home-slider-6.webp'}
-            alt={'slide.text'}
+            alt={'luxury wellness resorts in india'}
             fill
             className={`object-cover absolute top-0 left-0 transition-opacity duration-700`}
           />

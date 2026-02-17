@@ -1,26 +1,20 @@
 'use client'
 import Breadcrumbs from '@/components/BreadCrumbs'
+import CountryDropdown from '@/components/CountryDropDown'
+import ImageWithShimmer from '@/components/ImageWithShimmer'
 import PrimaryButton from '@/components/PrimaryButton'
-import { Check, Mail, MapPin, MoveRight, Phone } from 'lucide-react'
+import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
+import { selectedCurrencyAtom } from '@/lib/atoms'
+import { convertINRUsingGlobalRates } from '@/lib/convertCurrency'
+import { goToPemaMaps, ROUTES } from '@/utils/utils'
+import { useAtomValue } from 'jotai'
+import { Check, MoveRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
-import { goToPemaMaps, ROUTES } from '@/utils/utils'
-import Marquee from 'react-fast-marquee'
-import TestimonialCard from './Testimonials'
-import PemaTabsWeb from './Slides'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import TestimonialCard2 from './Testimonials2'
-
-const crumbs = [{ label: 'Home', href: '/' }, { label: 'Medical programs' }]
+import Marquee from 'react-fast-marquee'
 import ReactPlayer from 'react-player'
-import CountryDropdown from '@/components/CountryDropDown'
-import FAQs from './FAQs'
-import { selectedCurrencyAtom } from '@/lib/atoms'
-import { useAtomValue } from 'jotai'
-import { convertINRUsingGlobalRates } from '@/lib/convertCurrency'
-import ImageWithShimmer from '@/components/ImageWithShimmer'
 import DoctorsCarousel, {
   chefRajiv,
   doctorMuthu,
@@ -30,6 +24,12 @@ import DoctorsCarousel, {
   doctorSarath,
   professorPrahalad,
 } from './[slug]/ExpertsTeam'
+import FAQs from './FAQs'
+import PemaTabsWeb from './Slides'
+import TestimonialCard from './Testimonials'
+import TestimonialCard2 from './Testimonials2'
+
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Medical programs' }]
 
 export default function MedicalHealthProgram() {
   const router = useRouter()
@@ -83,9 +83,9 @@ export default function MedicalHealthProgram() {
       <div className='px-4 text-base md:text-xl text-slateGray font-crimson text-center mb-2 mt-4 md:mt-9'>
         Track 1 - Medical programs{' '}
       </div>
-      <div className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center'>
-        Where your healing universe unfolds on sacred ground{' '}
-      </div>
+      <h1 className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center'>
+        Redefining Self Care Through Luxury Wellness in India 
+      </h1>
       <div
         className='relative'
         id='overview'
@@ -131,13 +131,13 @@ export default function MedicalHealthProgram() {
           <div className='relative mt-6 w-full max-h-[470px] aspect-358/470 md:aspect-630/1360 md:max-h-[630px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/medical-health-program/hero-image-mobile.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'luxury wellness retreats in india'}
               fill
               className={`object-cover block md:hidden absolute top-0 left-0 `}
             />
             <ImageWithShimmer
               src={'/images/medical-health-program/hero-image.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'luxury wellness retreats in india'}
               fill
               className={`object-cover hidden md:block absolute top-0 left-0 `}
             />
@@ -177,13 +177,13 @@ export default function MedicalHealthProgram() {
           <div className='relative mt-6 w-full h-[430px] md:h-[552px] overflow-hidden'>
             <ImageWithShimmer
               src={'/pema-location-image-home.webp'}
-              alt={'naturopathy-banner-home'}
+              alt={'luxury wellness retreats in india'}
               fill
               className={`object-cover absolute hidden md:block top-0 left-0 `}
             />
             <ImageWithShimmer
               src={'/images/medical-health-program/pema-location-mobile.webp'}
-              alt={'naturopathy-banner-home'}
+              alt={'luxury wellness retreats in india'}
               fill
               className={`object-cover absolute block md:hidden top-0 left-0 `}
             />
@@ -263,7 +263,7 @@ export default function MedicalHealthProgram() {
           <div className='relative w-full h-[350] overflow-hidden md:h-[517] md:mt-0 mt-6'>
             <ImageWithShimmer
               src='/images/medical-health-program/healing-hill-web.webp'
-              alt='medical-health-program-banner-home'
+              alt={'luxury wellness retreats in india'}
               fill
               className='object-cover absolute top-0 left-0'
             />
@@ -290,7 +290,7 @@ export default function MedicalHealthProgram() {
 
               <ImageWithShimmer
                 src='/images/medical-health-program/iamge-1.webp'
-                alt='room image'
+                alt={'luxury wellness retreats in india'}
                 className='max-h-[545px]  object-cover'
                 width={750}
                 height={500}
@@ -302,7 +302,7 @@ export default function MedicalHealthProgram() {
 
               <ImageWithShimmer
                 src='/images/medical-health-program/image-2.webp'
-                alt='room image'
+                alt={'luxury wellness retreats in india'}
                 className='max-h-[545px] object-cover'
                 width={750}
                 height={500}
@@ -314,7 +314,7 @@ export default function MedicalHealthProgram() {
             </div>
             <ImageWithShimmer
               src='/images/medical-health-program/image-3.webp'
-              alt='rooom iamge'
+              alt={'luxury wellness retreats in india'}
               className='md:h-[550px] h-[350] w-full md:mt-4'
               width={750}
               height={500}
@@ -396,7 +396,7 @@ export default function MedicalHealthProgram() {
 
               <ImageWithShimmer
                 src='/images/medical-health-program/image-4.webp'
-                alt='room image'
+                alt={'luxury wellness retreats in india'}
                 className='max-h-[545px] object-cover'
                 width={750}
                 height={500}
@@ -408,7 +408,7 @@ export default function MedicalHealthProgram() {
 
               <ImageWithShimmer
                 src='/images/medical-health-program/image-5.webp'
-                alt='room image'
+                alt={'luxury wellness retreats in india'}
                 className='max-h-[545px] object-cover'
                 width={750}
                 height={500}
@@ -420,7 +420,7 @@ export default function MedicalHealthProgram() {
             </div>
             <ImageWithShimmer
               src='/images/medical-health-program/image-7.webp'
-              alt='rooom iamge'
+              alt={'luxury wellness retreats in india'}
               className='md:max-h-[550px] h-[350] w-full md:hidden'
               width={750}
               height={500}
@@ -431,7 +431,7 @@ export default function MedicalHealthProgram() {
             </div>
             <ImageWithShimmer
               src='/images/medical-health-program/image-6.webp'
-              alt='rooom iamge'
+              alt={'luxury wellness retreats in india'}
               className='md:h-[550px] h-[350] w-full  md:mt-4'
               width={750}
               height={500}
@@ -454,7 +454,7 @@ export default function MedicalHealthProgram() {
               <div className='relative w-full h-[350] overflow-hidden md:h-[517]'>
                 <ImageWithShimmer
                   src='/images/medical-health-program/ground-transport.webp'
-                  alt='medical-health-program-banner-home'
+                  alt={'luxury wellness retreats in india'}
                   fill
                   className='object-cover absolute top-0 left-0'
                 />
@@ -465,7 +465,7 @@ export default function MedicalHealthProgram() {
               <div className='relative w-full h-[350] overflow-hidden md:h-[517]'>
                 <ImageWithShimmer
                   src='/images/medical-health-program/air-transport.webp'
-                  alt='medical-health-program-banner-home'
+                  alt={'luxury wellness retreats in india'}
                   fill
                   className='object-cover absolute top-0 left-0'
                 />
@@ -528,7 +528,7 @@ export default function MedicalHealthProgram() {
           <div className='relative w-full h-[350] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src='/images/home/pema-lite-home-web.webp'
-              alt='wellbeing-banner-home'
+              alt={'luxury wellness retreats in india'}
               fill
               className='object-cover absolute top-0 left-0'
             />
@@ -561,7 +561,7 @@ export default function MedicalHealthProgram() {
           <div className='relative w-full h-[350] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src='/images/medical-health-program/wellness-journey-web.webp'
-              alt='wellbeing-banner-home'
+              alt={'luxury wellness retreats in india'}
               fill
               className='object-cover absolute top-0 left-0'
             />
@@ -733,7 +733,7 @@ export default function MedicalHealthProgram() {
               <div className='md:block hidden'>
                 <ImageWithShimmer
                   src={'/images/medical-health-program/medical-investment.webp'}
-                  alt='rooom iamge'
+                  alt={'luxury wellness retreats in india'}
                   className='h-[700px] w-full'
                   width={750}
                   height={500}
@@ -823,7 +823,7 @@ export default function MedicalHealthProgram() {
           <div className='relative w-full h-[350] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src='/images/medical-health-program/scared-land-web.webp'
-              alt='wellbeing-banner-home'
+              alt={'luxury wellness retreats in india'}
               fill
               className='object-cover absolute top-0 left-0'
             />
@@ -853,13 +853,13 @@ export default function MedicalHealthProgram() {
           <div className='relative mt-6 w-full h-[350] md:h-[517] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/medical-health-program/bottom-hero-image.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'luxury wellness retreats in india'}
               fill
               className={`object-cover absolute top-0 left-0 hidden md:block `}
             />
             <ImageWithShimmer
               src={'/images/medical-health-program/bottom-hero-image-mobile.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'luxury wellness retreats in india'}
               fill
               className={`object-cover absolute top-0 left-0 md:hidden block`}
             />

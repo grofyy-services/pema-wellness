@@ -1,13 +1,14 @@
 import PemaLite from './PemaLite'
 
 export const metadata = {
-  title: 'Pema Lite | Pema Wellness',
+  title: 'Luxury Wellness Resorts in India | Pema Wellness',
   description:
-    'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+    'Experience refined relaxation at Pema Wellness, one of the luxury wellness resorts in India with holistic therapies and serene stays. Visit us now.',
+  keywords: ['luxury wellness resorts in india', 'best spa resorts in india'],
   openGraph: {
-    title: 'Pema Lite | Pema Wellness',
+    title: 'Luxury Wellness Resorts in India | Pema Wellness',
     description:
-      'A wellness resort curated with programs that are customized to heal the harmony between the body, mind, and spirit, Pema Wellness is a purpose-driven resort that restores your holistic healing and enlightened wisdom. Get away from the stresses and strains of everyday life on one of our healing packages and improve your life.',
+      'Experience refined relaxation at Pema Wellness, one of the luxury wellness resorts in India with holistic therapies and serene stays. Visit us now.',
     url: 'https://pemawellness.com',
   },
 }

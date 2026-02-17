@@ -1,26 +1,26 @@
 'use client'
 import Breadcrumbs from '@/components/BreadCrumbs'
-import PrimaryButton from '@/components/PrimaryButton'
-import { Check, Mail, MapPin, MoveRight, Phone } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
-import { EXTERNAL_LINKS, goToPemaMaps, ROUTES, zohoForms } from '@/utils/utils'
-import Marquee from 'react-fast-marquee'
-import TestimonialCard from './Testimonials'
-import PemaTabsWeb from './Slides'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
-
-const crumbs = [{ label: 'Home', href: '/' }, { label: 'Wellness journey' }]
 import CountryDropdown from '@/components/CountryDropDown'
-import FAQs from './FAQs'
+import ImageWithShimmer from '@/components/ImageWithShimmer'
+import PrimaryButton from '@/components/PrimaryButton'
 import TextTestimonialCard from '@/components/TextTestimonials'
-import { textTestData } from './Testimonials2'
-import { useAtomValue } from 'jotai'
+import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
 import { selectedCurrencyAtom } from '@/lib/atoms'
 import { convertINRUsingGlobalRates } from '@/lib/convertCurrency'
-import ImageWithShimmer from '@/components/ImageWithShimmer'
+import { goToPemaMaps, ROUTES, zohoForms } from '@/utils/utils'
+import { useAtomValue } from 'jotai'
+import { Check, MoveRight } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
+import Marquee from 'react-fast-marquee'
+import FAQs from './FAQs'
+import PemaTabsWeb from './Slides'
+import TestimonialCard from './Testimonials'
+import { textTestData } from './Testimonials2'
+
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Wellness journey' }]
 
 export default function WellnessProgram() {
   const router = useRouter()
@@ -68,9 +68,9 @@ export default function WellnessProgram() {
       <div className='px-4 text-base md:text-xl text-slateGray font-crimson text-center mb-2 mt-4 md:mt-9'>
         Track 2 - Wellness journey{' '}
       </div>
-      <div className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center'>
-        The ultimate reset. Where luxury meets cellular renewal.{' '}
-      </div>
+      <h1 className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center'>
+        Experience Holistic Living at a Wellness Resort in India{' '}
+      </h1>
       <div
         className='relative'
         id='overview'
@@ -117,13 +117,13 @@ export default function WellnessProgram() {
           <div className='relative mt-6 w-full max-h-[470px] aspect-358/470 md:aspect-630/1360 md:max-h-[630px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/wellness-program/wellness-header-mobile.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness resort in india'}
               fill
               className={`object-cover block md:hidden absolute top-0 left-0 `}
             />
             <ImageWithShimmer
               src={'/images/wellness-program/wellness-header-web.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness resort in india'}
               fill
               className={`object-cover hidden md:block absolute top-0 left-0 `}
             />
@@ -167,7 +167,7 @@ export default function WellnessProgram() {
             <div className='relative w-full h-[350px] md:h-[530px] overflow-hidden'>
               <ImageWithShimmer
                 src={'/images/wellness-program/pinnacle-web.webp'}
-                alt={'wellbeing-banner-home'}
+                alt={'wellness resort in india'}
                 fill
                 className={`object-cover absolute top-0 left-0 `}
               />
@@ -215,7 +215,7 @@ export default function WellnessProgram() {
                   {/* first image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-1-web.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -224,7 +224,7 @@ export default function WellnessProgram() {
                   {/* second image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-2-web.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -234,7 +234,7 @@ export default function WellnessProgram() {
                 {/* third image horizontal*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-3-web.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -314,7 +314,7 @@ export default function WellnessProgram() {
                   {/* first image w-1/2 */}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-1-mobile.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='max-h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -331,7 +331,7 @@ export default function WellnessProgram() {
                   {/* second image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-2-mobile.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='max-h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -344,7 +344,7 @@ export default function WellnessProgram() {
                 {/* third image*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-3-mobile.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -356,7 +356,7 @@ export default function WellnessProgram() {
                 {/* third image*/}
                 <Image
                   src='/images/wellness-program/img-4-mobile.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -434,7 +434,7 @@ export default function WellnessProgram() {
                   {/* first image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-4-web.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -443,7 +443,7 @@ export default function WellnessProgram() {
                   {/* second image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-5-web.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -453,7 +453,7 @@ export default function WellnessProgram() {
                 {/* third image horizontal*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-6-web.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -485,7 +485,7 @@ export default function WellnessProgram() {
                   {/* first image w-1/2 */}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-5-mobile.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='max-h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -502,7 +502,7 @@ export default function WellnessProgram() {
                   {/* second image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-6-mobile.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='max-h-[545px] object-cover'
                     width={750}
                     height={500}
@@ -515,7 +515,7 @@ export default function WellnessProgram() {
                 {/* third image*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-7-mobile.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -527,7 +527,7 @@ export default function WellnessProgram() {
                 {/* third image*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-8-mobile.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -558,7 +558,7 @@ export default function WellnessProgram() {
                   {/* first image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-7-web.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='h-[545px]  object-cover'
                     width={750}
                     height={500}
@@ -567,7 +567,7 @@ export default function WellnessProgram() {
                   {/* second image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-8-web.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='h-[545px]  object-cover'
                     width={750}
                     height={500}
@@ -577,7 +577,7 @@ export default function WellnessProgram() {
                 {/* third image horizontal*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-9-web.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -662,7 +662,7 @@ export default function WellnessProgram() {
                   {/* first image w-1/2 */}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-9-mobile.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='max-h-[545px] md:w-1/2 object-cover'
                     width={750}
                     height={500}
@@ -679,7 +679,7 @@ export default function WellnessProgram() {
                   {/* second image w-1/2*/}
                   <ImageWithShimmer
                     src='/images/wellness-program/img-10-mobile.webp'
-                    alt='room image'
+                    alt={'wellness resort in india'}
                     className='max-h-[545px] md:w-1/2 object-cover'
                     width={750}
                     height={500}
@@ -692,7 +692,7 @@ export default function WellnessProgram() {
                 {/* third image*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-11-mobile.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -704,7 +704,7 @@ export default function WellnessProgram() {
                 {/* third image*/}
                 <ImageWithShimmer
                   src='/images/wellness-program/img-12-mobile.webp'
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='md:h-[550px] h-[350] w-full md:mt-4'
                   width={750}
                   height={500}
@@ -735,13 +735,13 @@ export default function WellnessProgram() {
           <div className='relative mt-6 w-full md:h-[517px] h-[350px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/wellness-program/beyond-mobile.webp'}
-              alt={'beyond-banner-home'}
+              alt={'wellness resort in india'}
               fill
               className={`object-cover block md:hidden absolute top-0 left-0 `}
             />
             <ImageWithShimmer
               src={'/images/wellness-program/beyond-web.webp'}
-              alt={'beyond-banner-home'}
+              alt={'wellness resort in india'}
               fill
               className={`object-cover hidden md:block absolute top-0 left-0 `}
             />
@@ -762,7 +762,7 @@ export default function WellnessProgram() {
               <div className='relative w-full h-[350] overflow-hidden md:h-[517]'>
                 <ImageWithShimmer
                   src='/images/medical-health-program/ground-transport.webp'
-                  alt='medical-health-program-banner-home'
+                  alt={'wellness resort in india'}
                   fill
                   className='object-cover absolute top-0 left-0'
                 />
@@ -773,7 +773,7 @@ export default function WellnessProgram() {
               <div className='relative w-full h-[350] overflow-hidden md:h-[517]'>
                 <ImageWithShimmer
                   src='/images/medical-health-program/air-transport.webp'
-                  alt='medical-health-program-banner-home'
+                  alt={'wellness resort in india'}
                   fill
                   className='object-cover absolute top-0 left-0'
                 />
@@ -836,7 +836,7 @@ export default function WellnessProgram() {
           <div className='relative w-full h-[350] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src='/images/home/pema-lite-home-web.webp'
-              alt='wellbeing-banner-home'
+              alt={'wellness resort in india'}
               fill
               className='object-cover absolute top-0 left-0'
             />
@@ -869,7 +869,7 @@ export default function WellnessProgram() {
               <div className='md:block hidden'>
                 <ImageWithShimmer
                   src={'/images/medical-health-program/medical-investment.webp'}
-                  alt='rooom iamge'
+                  alt={'wellness resort in india'}
                   className='h-[700px] w-full'
                   width={750}
                   height={500}
@@ -965,7 +965,7 @@ export default function WellnessProgram() {
           <div className='relative w-full h-[350] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src='/images/medical-health-program/scared-land-web.webp'
-              alt='wellbeing-banner-home'
+              alt={'wellness resort in india'}
               fill
               className='object-cover absolute top-0 left-0'
             />
@@ -994,13 +994,13 @@ export default function WellnessProgram() {
           <div className='relative mt-6 w-full h-[350] md:h-[517] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/wellness-program/healing-web.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness resort in india'}
               fill
               className={`object-cover absolute top-0 left-0 hidden md:block `}
             />
             <ImageWithShimmer
               src={'/images/wellness-program/healing-mobile.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness resort in india'}
               fill
               className={`object-cover absolute top-0 left-0 md:hidden block`}
             />

@@ -1,14 +1,14 @@
 'use client'
 import Breadcrumbs from '@/components/BreadCrumbs'
+import ImageWithShimmer from '@/components/ImageWithShimmer'
 import PrimaryButton from '@/components/PrimaryButton'
-import { Check, Mail, MapPin, MoveRight, Phone } from 'lucide-react'
-import Image from 'next/image'
-import TestimonialCard from './Testimonials'
-import ArticlesShowcase from './Article'
-import Link from 'next/link'
 import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
 import { goToPemaMaps, ROUTES, zohoForms } from '@/utils/utils'
-import ImageWithShimmer from '@/components/ImageWithShimmer'
+import { Check, Mail, MapPin, MoveRight, Phone } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import ArticlesShowcase from './Article'
+import TestimonialCard from './Testimonials'
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'About us' }, // current page (no href)
@@ -17,17 +17,15 @@ export default function AboutUs() {
   return (
     <div className=' max-w-[1360px] m-auto py-6 '>
       <Breadcrumbs items={crumbs} separator={' / '} className='px-4' />
-      <div className='px-4 text-base md:text-xl text-slateGray font-crimson text-center mb-2 mt-9'>
-        About us
-      </div>
-      <div className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center leading-none'>
-        Welcome to The Universe of You{' '}
-      </div>
+    
+      <h1 className='text-center text-[28px] md:text-[40px] text-slateGray font-ivyOra px-4 mt-4'>
+        Healing Focused Wellness Retreats in India
+      </h1>
       <div className='px-4'>
         <div className='relative mt-6 w-full h-[630px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/about/about-header-image-web.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className='object-cover'
           />
@@ -43,7 +41,7 @@ export default function AboutUs() {
         <div className='relative mt-6 w-full h-[350px] md:h-[700px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/about/about-header-image-web-2.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -89,7 +87,7 @@ export default function AboutUs() {
         <div className='relative mt-6 w-full h-[430px] md:h-[552px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/about/about-our-story.webp'}
-            alt={'naturopathy-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -112,7 +110,7 @@ export default function AboutUs() {
         <div className='relative mt-6 w-full h-[552px] overflow-hidden hidden md:block'>
           <ImageWithShimmer
             src={'/images/home/naturopathy-hero-image-web.webp'}
-            alt={'naturopathy-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -120,7 +118,7 @@ export default function AboutUs() {
         <div className='relative mt-6 w-full h-[430px] overflow-hidden block md:hidden '>
           <ImageWithShimmer
             src={'/images/home/naturopathy-hero-image-mobile.webp'}
-            alt={'naturopathy-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -153,7 +151,7 @@ export default function AboutUs() {
           <div className='my-2 md:my-0 relative w-full max-h-full h-[350px] lg:h-[750px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/about/founders-note-about.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness centre in india'}
               fill
               className={`object-cover absolute top-0 left-0 `}
             />
@@ -172,7 +170,7 @@ export default function AboutUs() {
         <div className='relative w-full h-[350px] md:h-[700px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/about/two-path-1.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -201,7 +199,7 @@ export default function AboutUs() {
         <div className='relative w-full h-[350px] md:h-[700px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/about/two-path-2.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -270,7 +268,7 @@ export default function AboutUs() {
         <div className='relative w-full h-[350px] md:h-[700px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/about/about-family-iamge.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'wellness centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 `}
           />
@@ -297,7 +295,7 @@ export default function AboutUs() {
           <div className='relative w-full h-[350px] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/about/founder-2-image.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness centre in india'}
               fill
               className={`object-cover absolute top-0 left-0 `}
             />
@@ -312,7 +310,7 @@ export default function AboutUs() {
           <div className='relative w-full h-[350px] md:h-[700px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/about/founders-note-about.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness centre in india'}
               fill
               className={`object-cover absolute top-0 left-0 `}
             />
@@ -325,7 +323,7 @@ export default function AboutUs() {
           <div className='relative hidden md:block w-full h-[350px] md:h-[550px] overflow-hidden'>
             <ImageWithShimmer
               src={'/images/about/circle-care-image.webp'}
-              alt={'wellbeing-banner-home'}
+              alt={'wellness centre in india'}
               fill
               className={`object-cover absolute top-0 left-0 `}
             />
@@ -345,7 +343,7 @@ export default function AboutUs() {
               <div className='my-2 md:my-0 relative w-full max-h-full h-[350px] md:hidden overflow-hidden'>
                 <ImageWithShimmer
                   src={'/images/about/circle-care-mobile-1.webp'}
-                  alt={'wellbeing-banner-home'}
+                  alt={'wellness centre in india'}
                   fill
                   className={`object-cover absolute top-0 left-0 `}
                 />
@@ -357,7 +355,7 @@ export default function AboutUs() {
               <div className='my-2 md:my-0 relative w-full max-h-full h-[350px] md:hidden overflow-hidden'>
                 <ImageWithShimmer
                   src={'/images/about/circle-care-mobile-2.webp'}
-                  alt={'wellbeing-banner-home'}
+                  alt={'wellness centre in india'}
                   fill
                   className={`object-cover absolute top-0 left-0 `}
                 />
@@ -369,7 +367,7 @@ export default function AboutUs() {
               <div className='my-2 md:my-0 relative w-full max-h-full h-[350px] md:hidden overflow-hidden'>
                 <ImageWithShimmer
                   src={'/images/about/circle-care-mobile-3.webp'}
-                  alt={'wellbeing-banner-home'}
+                  alt={'wellness centre in india'}
                   fill
                   className={`object-cover absolute top-0 left-0 `}
                 />
@@ -456,7 +454,7 @@ export default function AboutUs() {
             <div className='relative w-full h-[350px] md:h-[515px] overflow-hidden'>
               <ImageWithShimmer
                 src={'/images/about/celebrity-cheeranjivi.webp'}
-                alt={'wellbeing-banner-home'}
+                alt={'wellness centre in india'}
                 fill
                 className={`object-cover absolute top-0 left-0 `}
               />
@@ -470,7 +468,7 @@ export default function AboutUs() {
             <div className='relative w-full md:block hidden md:h-[515px] overflow-hidden'>
               <ImageWithShimmer
                 src={'/sanne-vloet.webp'}
-                alt={'wellbeing-banner-home'}
+                alt={'wellness centre in india'}
                 fill
                 className={`object-cover absolute top-0 left-0 `}
               />
@@ -478,7 +476,7 @@ export default function AboutUs() {
             <div className='relative w-full h-[360px] md:hidden overflow-hidden'>
               <ImageWithShimmer
                 src={'/sanne-vloet.webp'}
-                alt={'wellbeing-banner-home'}
+                alt={'wellness centre in india'}
                 fill
                 className={`object-cover object-top absolute top-0 left-0 `}
               />
@@ -492,7 +490,7 @@ export default function AboutUs() {
             <div className='relative w-full h-[350px] md:h-[515px] overflow-hidden'>
               <ImageWithShimmer
                 src={'/images/about/celebrity-naomie.webp'}
-                alt={'wellbeing-banner-home'}
+                alt={'wellness centre in india'}
                 fill
                 className={`object-cover absolute top-0 left-0 `}
               />

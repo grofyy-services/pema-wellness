@@ -1,17 +1,16 @@
 'use client'
 import Breadcrumbs from '@/components/BreadCrumbs'
+import ImageWithShimmer from '@/components/ImageWithShimmer'
 import PrimaryButton from '@/components/PrimaryButton'
-import { Check, MoveRight } from 'lucide-react'
+import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
+import { ROUTES } from '@/utils/utils'
+import { MoveRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import WhatsappStickyButton from '@/components/WhatsappButtonSticky'
 import { useRef } from 'react'
 import NaturopathicSection from './NaturopathicSection'
-import { ROUTES } from '@/utils/utils'
-import Koshas from '../homepage/Koshas'
-import WhatIsNaturopathy from './WhatIsNaturopathy'
 import TestimonialCard from './Testimonials'
-import ImageWithShimmer from '@/components/ImageWithShimmer'
+import WhatIsNaturopathy from './WhatIsNaturopathy'
 
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Naturopathy ' }]
 
@@ -21,24 +20,21 @@ export default function Naturopathy() {
   return (
     <div className=' max-w-[1360px] m-auto py-6 '>
       <Breadcrumbs items={crumbs} separator={' / '} className='px-4' />
-      <div className='px-4 text-base md:text-xl text-slateGray font-crimson text-center md:mb-2 mt-4 md:mt-9'>
-        Naturopathy
-      </div>
-      <div className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center'>
-        Naturopathy at Pema{' '}
-      </div>
+      <h1 className='px-4 text-[28px] md:text-[40px] text-slateGray font-ivyOra py-2 text-center'>
+        Leading Naturopathy Centre in India for Complete Wellness{' '}
+      </h1>
 
       <div className='px-4'>
         <div className='relative mt-4 md:mt-6 w-full h-[470px] md:h-[630px] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/naturopathy/hero-mobile.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'best naturopathy centre in india'}
             fill
             className={`object-cover block md:hidden absolute top-0 left-0 `}
           />
           <ImageWithShimmer
             src={'/images/naturopathy/hero-web.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'best naturopathy centre in india'}
             fill
             className={`object-cover hidden md:block absolute top-0 left-0 `}
           />
@@ -180,7 +176,7 @@ export default function Naturopathy() {
                 {/* first image w-1/2*/}
                 <ImageWithShimmer
                   src='/images/naturopathy/slide-1.webp'
-                  alt='room image'
+                  alt={'best naturopathy centre in india'}
                   className='h-[545px]  object-cover mb-4'
                   width={750}
                   height={500}
@@ -189,7 +185,7 @@ export default function Naturopathy() {
                 {/* second image w-1/2*/}
                 <ImageWithShimmer
                   src='/images/naturopathy/slide-2.webp'
-                  alt='room image'
+                  alt={'best naturopathy centre in india'}
                   className='h-[545px]  object-cover mb-4'
                   width={750}
                   height={500}
@@ -198,7 +194,7 @@ export default function Naturopathy() {
               {/* third image horizontal*/}
               <ImageWithShimmer
                 src='/images/naturopathy/slide-3.webp'
-                alt='rooom iamge'
+                alt={'best naturopathy centre in india'}
                 className='md:h-[550px] h-[350] w-full hidden md:block '
                 width={750}
                 height={500}
@@ -218,7 +214,7 @@ export default function Naturopathy() {
                   </div>
                   <Image
                     src='/images/naturopathy/slide-1.webp'
-                    alt='rooom iamge'
+                    alt={'best naturopathy centre in india'}
                     className='md:h-[550px] h-[350] md:hidden block object-cover w-full my-3'
                     width={750}
                     height={500}
@@ -291,7 +287,7 @@ export default function Naturopathy() {
                   </div>
                   <Image
                     src='/images/naturopathy/slide-4.webp'
-                    alt='rooom iamge'
+                    alt={'best naturopathy centre in india'}
                     className='md:h-[550px] h-[350] md:hidden object-cover block w-full my-3'
                     width={750}
                     height={500}
@@ -352,7 +348,7 @@ export default function Naturopathy() {
                 {/* first image w-1/2*/}
                 <ImageWithShimmer
                   src='/images/naturopathy/slide-4.webp'
-                  alt='room image'
+                  alt={'best naturopathy centre in india'}
                   className='h-[545px]  object-cover mb-4'
                   width={750}
                   height={500}
@@ -361,7 +357,7 @@ export default function Naturopathy() {
                 {/* second image w-1/2*/}
                 <ImageWithShimmer
                   src='/images/naturopathy/slide-5.webp'
-                  alt='room image'
+                  alt={'best naturopathy centre in india'}
                   className='h-[545px] object-cover mb-4'
                   width={750}
                   height={500}
@@ -370,14 +366,14 @@ export default function Naturopathy() {
               {/* third image horizontal*/}
               <ImageWithShimmer
                 src='/images/naturopathy/slide-6.webp'
-                alt='rooom iamge'
+                alt={'best naturopathy centre in india'}
                 className='md:h-[550px] h-[350] w-full hidden md:block '
                 width={750}
                 height={500}
               />
               <ImageWithShimmer
                 src='/images/naturopathy/slide-4.webp'
-                alt='rooom iamge'
+                alt={'best naturopathy centre in india'}
                 className='md:h-[550px] h-[350] md:hidden block object-cover w-full '
                 width={750}
                 height={500}
@@ -391,7 +387,7 @@ export default function Naturopathy() {
                 {/* first image w-1/2*/}
                 <ImageWithShimmer
                   src='/images/naturopathy/slide-7.webp'
-                  alt='room image'
+                  alt={'best naturopathy centre in india'}
                   className='h-[545px] object-cover mb-4'
                   width={750}
                   height={500}
@@ -400,7 +396,7 @@ export default function Naturopathy() {
                 {/* second image w-1/2*/}
                 <ImageWithShimmer
                   src='/images/naturopathy/slide-8.webp'
-                  alt='room image'
+                  alt={'best naturopathy centre in india'}
                   className='h-[545px] object-cover mb-4'
                   width={750}
                   height={500}
@@ -409,14 +405,14 @@ export default function Naturopathy() {
               {/* third image horizontal*/}
               <ImageWithShimmer
                 src='/images/naturopathy/slide-9.webp'
-                alt='rooom iamge'
+                alt={'best naturopathy centre in india'}
                 className='md:h-[550px] h-[350] w-full hidden md:block '
                 width={750}
                 height={500}
               />
               <ImageWithShimmer
                 src='/images/naturopathy/slide-7.webp'
-                alt='rooom iamge'
+                alt={'best naturopathy centre in india'}
                 className='md:h-[550px] h-[350] md:hidden block object-cover w-full '
                 width={750}
                 height={500}
@@ -435,7 +431,7 @@ export default function Naturopathy() {
                   </div>
                   <ImageWithShimmer
                     src='/images/naturopathy/slide-7.webp'
-                    alt='rooom iamge'
+                    alt={'best naturopathy centre in india'}
                     className='md:h-[550px] h-[350] md:hidden object-cover block w-full my-3'
                     width={750}
                     height={500}
@@ -537,13 +533,13 @@ export default function Naturopathy() {
         <div className='relative mt-6 w-full h-[350] md:h-[517] overflow-hidden'>
           <ImageWithShimmer
             src={'/images/naturopathy/footer-web.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'best naturopathy centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 hidden md:block `}
           />
           <ImageWithShimmer
             src={'/images/naturopathy/footer-mobile.webp'}
-            alt={'wellbeing-banner-home'}
+            alt={'best naturopathy centre in india'}
             fill
             className={`object-cover absolute top-0 left-0 md:hidden block`}
           />
